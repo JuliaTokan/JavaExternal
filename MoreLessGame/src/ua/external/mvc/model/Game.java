@@ -1,4 +1,4 @@
-package game;
+package ua.external.mvc.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,6 @@ public class Game {
     public Integer getGuessableNumber() {
         return guessableNumber;
     }
-
 
     public int getDiapasonFrom() {
         return diapasonFrom;

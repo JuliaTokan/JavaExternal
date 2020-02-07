@@ -1,9 +1,12 @@
-package game;
+package ua.external.mvc.view;
 
+
+import ua.external.mvc.model.Game;
 
 public class GameView {
     public void printGameResultDetails(Game game, String result) {
         System.out.println("Your attempts: " + game.getAttempts());
+        System.out.println("Your number of attempts is " + game.getAttempts().size());
         System.out.println("The guessable number in [" + game.getDiapasonFrom() + " ; " + game.getDiapasonTo() + "]");
         System.out.println(result);
         System.out.println();
