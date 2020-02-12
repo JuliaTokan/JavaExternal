@@ -22,7 +22,7 @@ public class Game {
         return guessableNumber;
     }
 
-    public int getDiapasonFrom() {
+    public Integer getDiapasonFrom() {
         return diapasonFrom;
     }
 
@@ -30,7 +30,7 @@ public class Game {
         this.diapasonFrom = diapasonFrom;
     }
 
-    public int getDiapasonTo() {
+    public Integer getDiapasonTo() {
         return diapasonTo;
     }
 
@@ -48,5 +48,13 @@ public class Game {
 
     public void addAttempt(Integer attempt) {
         attempts.add(attempt);
+    }
+
+    public boolean checkOutOfBound(Integer number){
+        return number < diapasonFrom || number > diapasonTo;
+    }
+
+    public int compareGuessableNumber(Integer number){
+        return guessableNumber.compareTo(number);
     }
 }

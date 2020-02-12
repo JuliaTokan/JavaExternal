@@ -47,38 +47,29 @@ public class GameController {
     }
 
     public void playGame() {
-        String RESULT_MORE_THAN = "Yor number is more than the right guess number! Try again!";
-        String RESULT_LESS_THAN = "Yor number is less than the right guess number! Try again!";
-        String RESULT_OUT_OF_BOUND = "Yor number out of bounds";
-        String RESULT_WIN = "You win!\nThe guess number is ";
-
         Scanner scanner = new Scanner(System.in);
 
         boolean win = false;
         while (!win) {
-            Integer guessableNumber = getGameGuessableNumber();
-            Integer diapasonFrom = getGameDiapasonFrom();
-            Integer diapasonTo = getGameDiapasonTo();
-
             showGameDiapason();
 
             Integer number = scanner.nextInt();
             addGameAttempt(number);
 
-            if (number < diapasonFrom || number > diapasonTo) {
-                showGameResult(RESULT_OUT_OF_BOUND);
+            if (game.checkOutOfBound(number)) {
+                showGameResult(GameView.RESULT_OUT_OF_BOUND);
                 continue;
             }
 
-            if (number == guessableNumber) {
-                showGameResult(RESULT_WIN + number);
+            if (game.compareGuessableNumber(number) == 0) {
+                showGameResult(GameView.RESULT_WIN + number);
                 win = true;
-            } else if (number < guessableNumber) {
+            } else if (game.compareGuessableNumber(number) == 1) {
                 setGameDiapasonFrom(number);
-                showGameResult(RESULT_LESS_THAN);
+                showGameResult(GameView.RESULT_LESS_THAN);
             } else {
                 setGameDiapasonTo(number);
-                showGameResult(RESULT_MORE_THAN);
+                showGameResult(GameView.RESULT_MORE_THAN);
             }
         }
     }
