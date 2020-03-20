@@ -23,16 +23,28 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1335">
+            <state relative-caret-position="1325">
               <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#init#0;class#FilmDAO#0" />
                 <element signature="method#add#0;class#FilmDAO#0" />
                 <element signature="method#getListFromResultSet#0;class#FilmDAO#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,7 +72,6 @@
         <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/DaoFactory.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/AbstractDAO.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/property/database.properties" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/view/FilmView.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/dd.java" />
@@ -73,6 +84,7 @@
         <option value="$PROJECT_DIR$/src/org/java/jdbc/controller/MoviesController.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java" />
       </list>
     </option>
   </component>
@@ -111,22 +123,14 @@
               <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
               <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="property" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,7 +142,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584559834757" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584708391856" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -191,15 +195,15 @@
       <updated>1584467737195</updated>
       <workItem from="1584467741092" duration="9647000" />
       <workItem from="1584540872028" duration="5889000" />
-      <workItem from="1584548792927" duration="7914000" />
+      <workItem from="1584548792927" duration="8034000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23450000" />
+    <option name="totallyTimeSpent" value="23570000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="25" width="1103" height="732" extended-state="1" />
+    <frame x="145" y="25" width="1103" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25918946" />
@@ -330,16 +334,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/DaoFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -459,13 +453,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1335">
+        <state relative-caret-position="1325">
           <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#FilmDAO#0" />
             <element signature="method#add#0;class#FilmDAO#0" />
             <element signature="method#getListFromResultSet#0;class#FilmDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
