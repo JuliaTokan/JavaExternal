@@ -5,12 +5,19 @@ import java.util.Date;
 public class Actor extends Entity {
     private String name;
     private Date birthDate;
+    private Boolean isDirector;
 
     public Actor() {
     }
 
     public Actor(Long id, String name, Date birthDate) {
         super(id);
+        this.name = name;
+        this.birthDate = birthDate;
+    }
+
+    public Actor(String name, Date birthDate) {
+        super(null);
         this.name = name;
         this.birthDate = birthDate;
     }

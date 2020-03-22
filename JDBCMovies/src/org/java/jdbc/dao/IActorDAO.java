@@ -13,4 +13,5 @@ public interface IActorDAO {
 
     List<Actor> findActorsByFilm(Film film);
     List<Actor> findActorsThatStarredInFilmsMoreThen(int numFilms);
+    List<Actor> findActorsAreDirectors();
 }

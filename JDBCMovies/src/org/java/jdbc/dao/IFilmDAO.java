@@ -8,7 +8,7 @@ import java.util.List;
 public interface IFilmDAO {
     void init();
     void add(Film film);
-    void addActorToFilm(Actor actor, Film film);
+    void addActorToFilm(Actor actor, Film film, Boolean isDirector);
 
     List<Film> getAll();
 

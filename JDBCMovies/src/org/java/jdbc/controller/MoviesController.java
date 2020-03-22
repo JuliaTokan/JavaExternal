@@ -55,9 +55,12 @@ public class MoviesController {
                         findActorsByFilm();
                         break;
                     case 9:
-                        findActorsByNumFilms();
+                        findActorsAreDirectors();
                         break;
                     case 10:
+                        findActorsByNumFilms();
+                        break;
+                    case 11:
                         System.exit(0);
                         break;
                 }
@@ -84,7 +87,7 @@ public class MoviesController {
         moviesView.printMsg("Enter country:");
         String country = bufferedReader.readLine();
 
-        Film film = new Film(null, name, releaseDate, country);
+        Film film = new Film(name, releaseDate, country);
         filmDAO.add(film);
     }
 
@@ -93,14 +96,17 @@ public class MoviesController {
         List<Film> films = filmDAO.getAll();
         moviesView.printListToChoose(films);
         moviesView.printMsg("Choose film:");
-        int film = Integer.parseInt(bufferedReader.readLine()) - 1 ;
+        int film = Integer.parseInt(bufferedReader.readLine()) - 1;
 
         List<Actor> actors = actorDAO.getAll();
         moviesView.printListToChoose(actors);
         moviesView.printMsg("Choose actor:");
         int actor = Integer.parseInt(bufferedReader.readLine()) - 1;
 
-        filmDAO.addActorToFilm(actors.get(actor), films.get(film));
+        moviesView.printMsg("If the actor is a director of this film?\n   0 - false;\n   1 - true;");
+        Boolean isDirector = new Boolean(bufferedReader.readLine().equals("1") ? true : false);
+
+        filmDAO.addActorToFilm(actors.get(actor), films.get(film), isDirector);
     }
 
     public void findFilmsThisAndLastYear() {
@@ -129,7 +135,7 @@ public class MoviesController {
         moviesView.printMsg("Enter date of birth (yyyy/mm/dd) :");
         Date birthDate = new Date(bufferedReader.readLine());
 
-        Actor actor = new Actor(null, name, birthDate);
+        Actor actor = new Actor(name, birthDate);
         actorDAO.add(actor);
     }
 
@@ -151,6 +157,11 @@ public class MoviesController {
         moviesView.printMsg("Enter num:");
         int num = Integer.parseInt(bufferedReader.readLine());
         List<Actor> actors = actorDAO.findActorsThatStarredInFilmsMoreThen(num);
+        moviesView.printList(actors);
+    }
+
+    public void findActorsAreDirectors() {
+        List<Actor> actors = actorDAO.findActorsAreDirectors();
         moviesView.printList(actors);
     }
 }

@@ -11,40 +11,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1325">
-              <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#init#0;class#FilmDAO#0" />
-                <element signature="method#add#0;class#FilmDAO#0" />
-                <element signature="method#getListFromResultSet#0;class#FilmDAO#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
+        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/controller/MoviesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            <state relative-caret-position="308">
+              <caret line="125" column="33" lean-forward="true" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#showAllFilms#0;class#MoviesController#0" />
+                <element signature="method#addFilm#0;class#MoviesController#0" />
+                <element signature="method#findFilmsThisAndLastYear#0;class#MoviesController#0" />
+                <element signature="method#deleteFilmsReleasedEarlier#0;class#MoviesController#0" />
+                <element signature="method#addActor#0;class#MoviesController#0" />
+                <element signature="method#findActorsByFilm#0;class#MoviesController#0" />
+                <element signature="method#findActorsByNumFilms#0;class#MoviesController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="151">
+              <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#init#0;class#ActorDAO#0" />
+                <element signature="method#getAll#0;class#ActorDAO#0" />
+                <element signature="method#findActorsByFilm#0;class#ActorDAO#0" />
+                <element signature="method#findActorsThatStarredInFilmsMoreThen#0;class#ActorDAO#0" />
+                <element signature="method#getListFromResultSet#0;class#ActorDAO#0" />
               </folding>
             </state>
           </provider>
@@ -75,16 +72,16 @@
         <option value="$PROJECT_DIR$/src/org/java/jdbc/view/FilmView.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Entity.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/dd.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/IActorDAO.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/IFilmDAO.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Film.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Actor.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/view/MoviesView.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/Main.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/controller/MoviesController.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java" />
-        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java" />
         <option value="$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Film.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/IActorDAO.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/view/MoviesView.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/entity/Actor.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/IFilmDAO.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java" />
+        <option value="$PROJECT_DIR$/src/org/java/jdbc/controller/MoviesController.java" />
       </list>
     </option>
   </component>
@@ -99,7 +96,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,7 +120,21 @@
               <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
               <item name="db" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
@@ -132,17 +143,24 @@
               <item name="jdbc" type="462c0819:PsiDirectoryNode" />
               <item name="property" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JDBCMovies" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JDBCMovies" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jdbc" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584708391856" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584898929339" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -196,17 +214,21 @@
       <workItem from="1584467741092" duration="9647000" />
       <workItem from="1584540872028" duration="5889000" />
       <workItem from="1584548792927" duration="8034000" />
+      <workItem from="1584708406422" duration="136000" />
+      <workItem from="1584731830770" duration="10000" />
+      <workItem from="1584731899252" duration="35000" />
+      <workItem from="1584896308264" duration="2196000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23570000" />
+    <option name="totallyTimeSpent" value="25947000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="145" y="25" width="1103" height="732" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25918946" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27803957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -239,6 +261,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/DataBaseHelper.java" />
@@ -301,9 +335,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/database.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/database.properties" />
     <entry file="file://$USER_HOME$/Downloads/JavaProAll/jdbc1 4/src/main/java/mysql1/AbstractDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -327,13 +359,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/dd.java" />
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/DaoFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -358,10 +383,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="23" lean-forward="true" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/JavaExternal/JDBCMovies/src/org/java/jdbc/DemoMoviesApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/Film.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="43" column="4" lean-forward="true" selection-start-line="43" selection-start-column="4" selection-end-line="46" selection-end-column="5" />
+        <state relative-caret-position="300">
+          <caret line="20" column="18" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
           <folding>
             <element signature="e#887#888#0" expanded="true" />
             <element signature="e#973#974#0" expanded="true" />
@@ -369,31 +428,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/Actor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="35" column="49" lean-forward="true" selection-start-line="35" selection-start-column="49" selection-end-line="35" selection-end-column="49" />
-          <folding>
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/IFilmDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/IActorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="52" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="52" />
+        <state relative-caret-position="225">
+          <caret line="15" column="39" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -402,29 +440,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/view/MoviesView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+        <state relative-caret-position="270">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/entity/Actor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        <state relative-caret-position="450">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/IFilmDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="51" column="45" lean-forward="true" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#init#0;class#FilmDAO#0" />
+            <element signature="method#add#0;class#FilmDAO#0" />
+            <element signature="method#getListFromResultSet#0;class#FilmDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/ActorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="16" column="243" selection-start-line="16" selection-start-column="243" selection-end-line="16" selection-end-column="243" />
+        <state relative-caret-position="151">
+          <caret line="76" lean-forward="true" selection-start-line="76" selection-end-line="76" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#init#0;class#ActorDAO#0" />
-            <element signature="method#add#0;class#ActorDAO#0" />
             <element signature="method#getAll#0;class#ActorDAO#0" />
             <element signature="method#findActorsByFilm#0;class#ActorDAO#0" />
             <element signature="method#findActorsThatStarredInFilmsMoreThen#0;class#ActorDAO#0" />
@@ -435,41 +492,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/controller/MoviesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="102" column="66" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+        <state relative-caret-position="308">
+          <caret line="125" column="33" lean-forward="true" selection-start-line="125" selection-start-column="33" selection-end-line="125" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#showAllFilms#0;class#MoviesController#0" />
             <element signature="method#addFilm#0;class#MoviesController#0" />
             <element signature="method#findFilmsThisAndLastYear#0;class#MoviesController#0" />
             <element signature="method#deleteFilmsReleasedEarlier#0;class#MoviesController#0" />
-            <element signature="method#showAllActors#0;class#MoviesController#0" />
             <element signature="method#addActor#0;class#MoviesController#0" />
             <element signature="method#findActorsByFilm#0;class#MoviesController#0" />
             <element signature="method#findActorsByNumFilms#0;class#MoviesController#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/dao/impl/FilmDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1325">
-          <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#init#0;class#FilmDAO#0" />
-            <element signature="method#add#0;class#FilmDAO#0" />
-            <element signature="method#getListFromResultSet#0;class#FilmDAO#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/java/jdbc/db/ConnectorDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

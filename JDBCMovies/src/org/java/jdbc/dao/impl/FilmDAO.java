@@ -13,7 +13,7 @@ public class FilmDAO extends AbstractDAO implements IFilmDAO {
     public static final String SQL_SELECT_ALL_FILMS = "SELECT * FROM film";
     public static final String SQL_INSERT_FILMS = "INSERT INTO film (name, releasedate, country) VALUES(?, ?, ?)";
 
-    public static final String SQL_INSERT_ACTOR_TO_FILM = "INSERT INTO film_actor VALUES(?, ?)";
+    public static final String SQL_INSERT_ACTOR_TO_FILM = "INSERT INTO film_actor VALUES(?, ?, ?)";
 
     public static final String SQL_SELECT_FILMS_BETWEEN_YEARS = "SELECT * FROM film WHERE releasedate BETWEEN ? AND ?";
     public static final String SQL_DELETE_FILMS_EARLIER_YEARS = "DELETE FROM film WHERE releasedate < ?";
@@ -43,12 +43,13 @@ public class FilmDAO extends AbstractDAO implements IFilmDAO {
     }
 
     @Override
-    public void addActorToFilm(Actor actor, Film film) {
+    public void addActorToFilm(Actor actor, Film film, Boolean isDirector) {
         try {
             PreparedStatement st = connection.prepareStatement(SQL_INSERT_ACTOR_TO_FILM);
             try {
                 st.setLong(1, film.getId());
                 st.setLong(2, actor.getId());
+                st.setBoolean(3, isDirector);
                 st.executeUpdate();
             } finally {
                 st.close();

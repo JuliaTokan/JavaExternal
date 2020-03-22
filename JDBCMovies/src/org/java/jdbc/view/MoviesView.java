@@ -14,8 +14,9 @@ public class MoviesView {
         System.out.println("   6 - show all actors;");
         System.out.println("   7 - add new actor;");
         System.out.println("   8 - find actors by film;");
-        System.out.println("   9 - find actors by the number of films in which they worked;");
-        System.out.println("\n   10 - exit;");
+        System.out.println("   9 - find actors who were directors at least one of the films;");
+        System.out.println("   10 - find actors by the number of films in which they worked;");
+        System.out.println("\n   11 - exit;");
     }
 
     public void printMsg(String msg){

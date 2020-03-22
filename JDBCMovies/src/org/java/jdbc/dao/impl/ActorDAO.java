@@ -15,6 +15,7 @@ public class ActorDAO extends AbstractDAO implements IActorDAO {
 
     public static final String SQL_SELECT_ACTORS_BY_FILM = "SELECT actor.id, actor.name, actor.birthdate FROM film_actor INNER JOIN actor ON film_actor.id_actor = actor.id WHERE film_actor.id_film = ?";
     public static final String SQL_SELECT_ACTORS_STARRED_IN_FILMS_MORE_THAN= "SELECT actor.id, actor.name, actor.birthdate FROM film_actor INNER JOIN actor ON film_actor.id_actor = actor.id GROUP BY actor.id HAVING COUNT(film_actor.id_film) >= ?";
+    public static final String SQL_SELECT_ACTORS_ARE_DIRECTORS = "SELECT DISTINCT actor.id, actor.name, actor.birthdate FROM film_actor INNER JOIN actor ON film_actor.id_actor = actor.id WHERE film_actor.is_director = true";
 
     public ActorDAO(Connection connection) {
         super(connection);
@@ -83,6 +84,23 @@ public class ActorDAO extends AbstractDAO implements IActorDAO {
             st.setInt(1, numFilms);
             ResultSet resultSet =
                     st.executeQuery();
+            actors = getListFromResultSet(resultSet);
+        } catch (SQLException e) {
+            System.err.println("SQL exception (request or table failed): " + e);
+        } finally {
+            close(st);
+        }
+        return actors;
+    }
+
+    @Override
+    public List<Actor> findActorsAreDirectors() {
+        List<Actor> actors = new ArrayList<>();
+        Statement st = null;
+        try {
+            st = connection.createStatement();
+            ResultSet resultSet =
+                    st.executeQuery(SQL_SELECT_ACTORS_ARE_DIRECTORS);
             actors = getListFromResultSet(resultSet);
         } catch (SQLException e) {
             System.err.println("SQL exception (request or table failed): " + e);

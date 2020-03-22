@@ -17,6 +17,13 @@ public class Film extends Entity{
         this.country = country;
     }
 
+    public Film(String name, Date releaseDate, String country) {
+        super(null);
+        this.name = name;
+        this.releaseDate = releaseDate;
+        this.country = country;
+    }
+
     public String getName() {
         return name;
     }
