@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
-public class Main {
+public class DemoMovies {
 
     public static void main(String[] args) throws SQLException {
         FilmDAO filmDAO = DaoFactory.createFilmDAO();
