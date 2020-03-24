@@ -1,9 +1,14 @@
 package org.java.jdbc.controller;
 
-import org.java.jdbc.dao.impl.ActorDAO;
-import org.java.jdbc.dao.impl.FilmDAO;
 import org.java.jdbc.entity.Actor;
 import org.java.jdbc.entity.Film;
+import org.java.jdbc.repository.ActorRepository;
+import org.java.jdbc.repository.FilmRepository;
+import org.java.jdbc.specification.searchSpecification.actor.FindByFilm;
+import org.java.jdbc.specification.searchSpecification.actor.FindByFilmsNum;
+import org.java.jdbc.specification.searchSpecification.actor.FindDirectors;
+import org.java.jdbc.specification.searchSpecification.film.FindByReleaseDateDiapason;
+import org.java.jdbc.specification.searchSpecification.film.FindLessByReleaseDate;
 import org.java.jdbc.view.MoviesView;
 
 import java.io.BufferedReader;
@@ -12,14 +17,14 @@ import java.io.InputStreamReader;
 import java.util.Date;
 import java.util.List;
 
-public class MoviesController {
-    private FilmDAO filmDAO;
-    private ActorDAO actorDAO;
-    private MoviesView moviesView;
+public class MoviesRepositoryController {
+    FilmRepository filmRepository;
+    ActorRepository actorRepository;
+    MoviesView moviesView;
 
-    public MoviesController(FilmDAO filmDAO, ActorDAO actorDAO, MoviesView moviesView) {
-        this.filmDAO = filmDAO;
-        this.actorDAO = actorDAO;
+    public MoviesRepositoryController(FilmRepository filmRepository, ActorRepository actorRepository, MoviesView moviesView) {
+        this.filmRepository = filmRepository;
+        this.actorRepository = actorRepository;
         this.moviesView = moviesView;
     }
 
@@ -74,7 +79,7 @@ public class MoviesController {
     }
 
     public void showAllFilms() {
-        List<Film> films = filmDAO.getAll();
+        List<Film> films = filmRepository.getAll();
         moviesView.printList(films);
     }
 
@@ -88,17 +93,17 @@ public class MoviesController {
         String country = bufferedReader.readLine();
 
         Film film = new Film(name, releaseDate, country);
-        filmDAO.add(film);
+        filmRepository.add(film);
     }
 
     public void addActorToFilm() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        List<Film> films = filmDAO.getAll();
+        List<Film> films = filmRepository.getAll();
         moviesView.printListToChoose(films);
         moviesView.printMsg("Choose film:");
         int film = Integer.parseInt(bufferedReader.readLine()) - 1;
 
-        List<Actor> actors = actorDAO.getAll();
+        List<Actor> actors = actorRepository.getAll();
         moviesView.printListToChoose(actors);
         moviesView.printMsg("Choose actor:");
         int actor = Integer.parseInt(bufferedReader.readLine()) - 1;
@@ -106,13 +111,13 @@ public class MoviesController {
         moviesView.printMsg("If the actor is a director of this film?\n   0 - false;\n   1 - true;");
         Boolean isDirector = new Boolean(bufferedReader.readLine().equals("1") ? true : false);
 
-        filmDAO.addActorToFilm(actors.get(actor), films.get(film), isDirector);
+        filmRepository.addActorToFilm(actors.get(actor), films.get(film), isDirector);
     }
 
     public void findFilmsThisAndLastYear() {
         int thisYear = new Date().getYear();
         int lastYear = thisYear - 1;
-        List<Film> films = filmDAO.findFilmsBetweenYears(lastYear, thisYear);
+        List<Film> films = filmRepository.query(new FindByReleaseDateDiapason(lastYear, thisYear));
         moviesView.printList(films);
     }
 
@@ -120,11 +125,11 @@ public class MoviesController {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         moviesView.printMsg("Enter a number of years:");
         int num = Integer.parseInt(bufferedReader.readLine());
-        filmDAO.deleteFilmsReleasedEarlier(num);
+        filmRepository.query(new FindLessByReleaseDate(num));
     }
 
     public void showAllActors() {
-        List<Actor> actors = actorDAO.getAll();
+        List<Actor> actors = actorRepository.getAll();
         moviesView.printList(actors);
     }
 
@@ -136,19 +141,19 @@ public class MoviesController {
         Date birthDate = new Date(bufferedReader.readLine());
 
         Actor actor = new Actor(name, birthDate);
-        actorDAO.add(actor);
+        actorRepository.add(actor);
     }
 
     public void findActorsByFilm() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        List<Film> films = filmDAO.getAll();
+        List<Film> films = filmRepository.getAll();
         moviesView.printListToChoose(films);
 
         moviesView.printMsg("Choose film:");
         int film = Integer.parseInt(bufferedReader.readLine()) - 1;
 
-        List<Actor> actors = actorDAO.findActorsByFilm(films.get(film));
+        List<Actor> actors = actorRepository.query(new FindByFilm(films.get(film).getId()));
         moviesView.printList(actors);
     }
 
@@ -156,12 +161,12 @@ public class MoviesController {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         moviesView.printMsg("Enter num:");
         int num = Integer.parseInt(bufferedReader.readLine());
-        List<Actor> actors = actorDAO.findActorsThatStarredInFilmsMoreThen(num);
+        List<Actor> actors = actorRepository.query(new FindByFilmsNum(num));
         moviesView.printList(actors);
     }
 
     public void findActorsAreDirectors() {
-        List<Actor> actors = actorDAO.findActorsAreDirectors();
+        List<Actor> actors = actorRepository.query(new FindDirectors());
         moviesView.printList(actors);
     }
 }
